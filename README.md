@@ -80,10 +80,8 @@
 3. Execute the script:
 
 ```powershell
-`.\1_CREATE_USERS.ps1`
-
-
----
+.\1_CREATE_USERS.ps1
+```
 
 ### 🧪 **Testing the Environment**
 
@@ -111,7 +109,7 @@
    - Reboot
 
 5. Log in with one of the created domain accounts to test
-
+```
 
 ## Network Diagram
 
