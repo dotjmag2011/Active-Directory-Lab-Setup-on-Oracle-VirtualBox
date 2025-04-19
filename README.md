@@ -80,4 +80,88 @@
 3. Execute the script:
 
 ```powershell
-.\1_CREATE_USERS.ps1
+`.\1_CREATE_USERS.ps1`
+
+
+---
+
+### 🧪 **Testing the Environment**
+
+```markdown
+## Windows 10 Client
+
+1. Create a new VM:
+   - **Name:** Client
+   - **RAM:** 2048MB
+   - **Disk:** 20 GB
+   - **CPU:** 2 cores
+   - **ISO:** Windows 10
+
+2. Configure Networking:
+   - NIC: Attached to **Internal Network**
+
+3. Install Windows and configure the following:
+   - Set static IP in same subnet as Domain Controller
+   - Set DNS to point to the DC's IP address
+
+4. Join the domain:
+   - Right-click **This PC → Properties → Change Settings**
+   - Join domain: `corp.com`
+   - Enter domain credentials
+   - Reboot
+
+5. Log in with one of the created domain accounts to test
+
+
+## Network Diagram
+
+![Network Diagram](Diagram.png)
+
+## Active Directory Icon
+
+![Active Directory Icon](active-directory-icon-2048x2007-4d62k2nj.png)
+
+
+## Common Issues & Fixes
+
+- **Can't join domain:**
+  - Ensure client DNS is pointing to the Domain Controller IP
+  - Confirm the internal network is working
+
+- **User login fails:**
+  - Check user credentials in AD
+  - Reset password in Active Directory Users and Computers
+
+- **PowerShell script errors:**
+  - Ensure execution policy allows script running:
+    ```powershell
+    Set-ExecutionPolicy RemoteSigned
+    ```
+  - Run PowerShell as Administrator
+
+## Tools & Technologies
+
+- Oracle VirtualBox
+- Microsoft Windows Server 2019
+- Windows 10
+- PowerShell
+- Active Directory Domain Services (ADDS)
+- DNS
+
+
+## Summary
+
+This lab simulates a small enterprise environment using virtual machines. It demonstrates how to:
+
+- Deploy and configure a Windows Server 2019 Domain Controller
+- Automate user creation with PowerShell
+- Connect a Windows 10 client to an Active Directory domain
+- Practice AD administration and network configuration in a safe, isolated environment
+
+
+## License
+
+This project is for educational and personal learning purposes. Feel free to modify and extend it for your own training labs or demos.
+
+
+
